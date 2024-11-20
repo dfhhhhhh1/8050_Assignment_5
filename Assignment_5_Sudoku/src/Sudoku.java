@@ -28,16 +28,21 @@ public class Sudoku {
     }
 
     public void printBoard() {
+        System.out.println(" -----------------------");
         for (int row = 0; row < SIZE; row++) {
             for (int col = 0; col < SIZE; col++) {
+                if (col == 0) {
+                    System.out.print("| ");
+                }
                 System.out.print(board[row][col] + " ");
-                if ((col + 1) % SUBGRID_SIZE == 0 && col < SIZE - 1) {
+                if ((col + 1) % SUBGRID_SIZE == 0) {
                     System.out.print("| ");
                 }
             }
             System.out.println();
-            if ((row + 1) % SUBGRID_SIZE == 0 && row < SIZE - 1) {
-                System.out.println();
+            if ((row + 1) % SUBGRID_SIZE == 0) {
+                System.out.println(" -----------------------");
+
             }
         }
     }
